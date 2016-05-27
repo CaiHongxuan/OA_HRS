@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="empPackage" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="success">/index.jsp</result>
+		</global-results>
+		<!-- spring管理了action, class配的不是类名而是spring中bean的id或name -->
+		<action name="empAction" class="empAction">
+			<!-- <result name="showEmpList">/page/searchDeptInfo.jsp</result> -->
+		</action>
+	</package>
+
+</struts>    

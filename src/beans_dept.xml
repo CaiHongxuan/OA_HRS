@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- 
+		actionBeans注意: 要使用原型模式
+	 -->
+	<bean id="deptAction" class="com.neusoft.action.DeptAction" scope="prototype"  autowire="byType">
+		<property name="deptService" ref="deptService"></property>
+	</bean>
+	
+	<!-- serviceBeans -->
+	<bean id="deptService" class="com.neusoft.service.DeptService" autowire="byType">
+		<property name="deptDao" ref="deptDao"></property>
+	</bean>
+	
+	<!-- daoBeans -->
+	<bean id="deptDao" class="com.neusoft.dao.DeptDao" autowire="byType">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+</beans>

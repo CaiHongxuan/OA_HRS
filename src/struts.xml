@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<!-- 开发模式, 发布时改为false -->
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- spring管理Struts的action时采用该配置， 以后Action以bean的形式配置在Spring的配置文件中 -->
+	<constant name="struts.objectFactory" value="spring" />
+	
+	<!-- 引入struts的模块配置文件 -->
+	<include file="struts_dept.xml"></include>
+	<include file="struts_post.xml"></include>
+	<include file="struts_emp.xml"></include>
+	
+</struts>    

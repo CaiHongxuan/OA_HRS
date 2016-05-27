@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="dept" catalog="hrs" class="com.neusoft.model.Dept">
+		<primary-key>
+			<generator class="increment"></generator>
+		</primary-key>
+	</table>
+	<table name="post" catalog="hrs" class="com.neusoft.model.Post">
+		<primary-key>
+			<generator class="increment"></generator>
+		</primary-key>
+	</table>
+<table name="emp" catalog="hrs" class="com.neusoft.model.Emp">
+	<primary-key>
+		<generator class="increment"></generator>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>

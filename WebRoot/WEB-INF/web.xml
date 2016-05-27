@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>OA_HRS</display-name>  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- spring的web-application监听器， 随容器启动，并加载spring的bean容器-->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <!-- spring读取的配置文件配置 -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext.xml</param-value>
+  </context-param>
+  
+  <!-- spring的配置： 避免service方法结束后(关闭session)再从页面中获取延迟加载的model属性时异常nosession。 -->
+  <filter>
+    <filter-name>openSessionInView</filter-name>
+    <filter-class>
+			org.springframework.orm.hibernate4.support.OpenSessionInViewFilter
+	</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>openSessionInView</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!-- 定义Sruts2的核心Filter -->
+  <filter>
+    <filter-name>struts2</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  </filter>
+  <!-- 让Struts2的核心Filter拦截所有请求 -->
+  <filter-mapping>
+    <filter-name>struts2</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+</web-app>
